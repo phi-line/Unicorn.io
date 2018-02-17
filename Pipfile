@@ -8,6 +8,9 @@ name = "pypi"
 [packages]
 
 pycrunchbase = "*"
+requests = "*"
+tinydb = "*"
+quart = "*"
 
 
 [dev-packages]
