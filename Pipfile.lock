@@ -1,0 +1,53 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "cb8790ecc9db705ec26351729af9f346b8576c8b042c04271fc6600f2d37153c"
+        },
+        "host-environment-markers": {
+            "implementation_name": "cpython",
+            "implementation_version": "3.6.3",
+            "os_name": "posix",
+            "platform_machine": "x86_64",
+            "platform_python_implementation": "CPython",
+            "platform_release": "17.0.0",
+            "platform_system": "Darwin",
+            "platform_version": "Darwin Kernel Version 17.0.0: Thu Aug 24 21:48:19 PDT 2017; root:xnu-4570.1.46~2/RELEASE_X86_64",
+            "python_full_version": "3.6.3",
+            "python_version": "3.6",
+            "sys_platform": "darwin"
+        },
+        "pipfile-spec": 6,
+        "requires": {},
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "pycrunchbase": {
+            "hashes": [
+                "sha256:fb041aa4b9e53f3d681194bc263f84c44876c347721c073cbbff6c901e7d2fd6",
+                "sha256:9b1dbd453fc309fdba5f475c7b86a345dfddcd1c9dafa0a45f59236e7cd623cf"
+            ],
+            "version": "==0.3.8"
+        },
+        "requests": {
+            "hashes": [
+                "sha256:1f046dcf5ec712ed3be8684b9f33c95b76e28cd1c825db0f5e1557bfd87b3745",
+                "sha256:7b7735efd3b1e2323dc9fcef060b380d05f5f18bd0f247f5e9e74a628279de66"
+            ],
+            "version": "==2.5.1"
+        },
+        "six": {
+            "hashes": [
+                "sha256:418a93c397a7edab23e5588dbc067ac74a723edb3d541bd4936f79476e7645da",
+                "sha256:e24052411fc4fbd1f672635537c3fc2330d9481b18c0317695b46259512c91d5"
+            ],
+            "version": "==1.9.0"
+        }
+    },
+    "develop": {}
+}
