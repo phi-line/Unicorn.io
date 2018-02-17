@@ -23,15 +23,21 @@ def main():
     # investor = cb.organization('sequoia-capital')
 
     res = requests.get(f'https://api.crunchbase.com/v3.1/organizations/{ORG}/investments?user_key={USER_KEY}')
+    j = loads(res.content) # first load of the data
 
-    j = loads(res.content)
+    total_pages = j['data']['paging']['number_of_pages']
+    current = 1
+
+    table = db.table(f"{ORG}")
+    while current < total_pages:
+        for i in j['data']['items']:
+            table.insert(i)
+        res = requests.get(j['data']['paging']['next_page_url'], params={'user_key':USER_KEY})
+        j = loads(res.content)
+        current += 1
 
 
     # pp = pprint.PrettyPrinter(j, depth=6)
-
-    table = db.table(f"{ORG}")
-    for i in j['data']['items']:
-        table.insert(i)
 
     for i in table:
         print(i)
