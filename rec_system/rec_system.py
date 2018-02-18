@@ -121,19 +121,23 @@ class rec_system:
         company_rankings = []
 
         for company in self.companies_data:
-            sizeString = "Unknown"
+            sizeString = "Unknown size"
             if self.companies_data[company]['num_employees_min'] != None and self.companies_data[company]['num_employees_max'] != None:
-                sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])
+                sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])+" employees"
+            emailString = "No contact email provided"
+            if self.companies_data[company]['email'] != None:
+                emailString = self.companies_data[company]['email']
 
             if company not in company_names:
                 company_names.append(company)
                 company_rankings.append((company,
                                          self.getRankingForCompany(company),
-                                         self.companies_data[company]['email'],
+                                         emailString,
                                          sizeString,
                                          None,
                                          self.companies_data[company]['short_description'],
-                                         self.companies_data[company]['profile_image_url']))
+                                         self.companies_data[company]['profile_image_url'],
+                                         sizeString))
         results = sorted(company_rankings, key=lambda x: x[1])
         return results[:12]
 
