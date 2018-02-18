@@ -1,0 +1,12 @@
+What problem we solve
+- Graduates look for high-profile startups with the greatest opportunity for growth and creative input
+
+What Unicorn.io is
+- Scrape user resume and generate a normalized word frequency vector
+- Scrape company information from crunchbase.com and generate a normalized word frequency vector for each company
+- The word frequency profile for each company is compared with that of the user to find the best focus/interest match
+- Our algorithm also prioritizes company size, funding round to select companies
+- We use our own pdf scraping technology and our own api for extracting company information
+
+Why Unicorn.io is important
+- Anyone can instantly find personalized recommendations for compatible startup companies, enabling graduates to have more control over their careers
