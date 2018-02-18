@@ -122,10 +122,12 @@ class rec_system:
     def rankCompaniesForUser(self):
         company_rankings = []
         for company in self.companies_data:
-            company_rankings.append((company, self.getRankingForCompany(company)))
+            sizeString = "Unknown"
+            if self.companies_data[company]['num_employees_min'] != None and self.companies_data[company]['num_employees_max'] != None:
+                sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])
+
+            company_rankings.append((company, self.getRankingForCompany(company), self.companies_data[company]['contact_email'],sizeString, None, self.companies_data[company]['description']))
         results = sorted(company_rankings, key=lambda x: x[1])
-        print("results")
-        print(results)
         return results
 
 # user_recs = rec_system()
