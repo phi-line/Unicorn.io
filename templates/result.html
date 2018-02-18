@@ -2,18 +2,6 @@
 
     {% block content %}
 
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Unicorn.io</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-      </div>
-    </nav>
-
     <section id="about" class="content-section text-center">
 
     <div class='container'>
@@ -21,20 +9,20 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Company</th>
-            <th scope="col">Contact</th>
-            <th scope="col">Size</th>
-            <th scope="col">Website</th>
+            <th scope="col" class='text-left'>Company</th>
+            <th scope="col" class='text-left'>Contact</th>
+            <th scope="col" class='text-left'>Size</th>
+            <!-- <th scope="col">Website</th> -->
           </tr>
         </thead>
         <tbody>
           {% for i in range(info|length) %}
           <tr>
             <th scope="row">{{i+1}}</th>
-            <td>{{info[i][0]}}</td>
-            <td>{{info[i][2]}}</td>
-            <td>{{info[i][3]}}</td>
-            <td>{{info[i][4]}}</td>
+            <td class='text-left'>{{info[i][0]}}</td>
+            <td class='text-left'>{{info[i][2]}}</td>
+            <td class='text-left'>{{info[i][3]}}</td>
+            <!-- <td>{{info[i][4]}}</td> -->
           </tr>
           {% endfor %}
         </tbody>
