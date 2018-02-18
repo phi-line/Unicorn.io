@@ -10,5 +10,5 @@
   "hardware": ["arduino","matlab","raspberry","c","c++","pspice","autodesk","cad","solidworks", 
     "circuit","circuitlab","signal","hardware","drone","device","sensor","processor","chip"],
   "security": ["cyber","security","defense","operating","kernel","thread","process","flag","cft","threat"],
-  "finance": ["cryptocurrency","bitcoin","blockchain","trading","quant","ether","coin","asset"]
+  "finance": ["cryptocurrency","bitcoin","blockchain","trading","quant","ether","coin","asset","assets"]
 }

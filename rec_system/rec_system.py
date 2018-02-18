@@ -10,7 +10,7 @@ import math
 import json
 from json import dumps, loads
 import requests
-from user_key import USER_KEY
+from rec_system.user_key import USER_KEY
 
 with open('keywords.json', 'r') as f:
   industry_keywords = json.load(f)

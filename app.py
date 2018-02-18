@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 import os, sys
 from os.path import abspath, dirname
-import parse as parse
-import rec_system as rec_system
+from parse_pdf.parse import parse_resume
+from rec_system.rec_system import rec_system
 from werkzeug.utils import secure_filename
 UPLOAD_FOLDER = 'static/files/'
 ALLOWED_EXTENSIONS = set(['pdf'])
@@ -27,7 +27,7 @@ def allowed_file(filename):
 @app.route('/start/', methods =['POST', 'GET'])
 def start():
         if request.method == 'POST':
-            size = request.form['size']
+            size = int(request.form['size'])
             funding = request.form['funding']
             location = request.form['location']
             # check if the post request has the file part
@@ -43,11 +43,12 @@ def start():
             if file and allowed_file(file.filename):
                 basedir = abspath(dirname(__file__))
                 filename = secure_filename(file.filename)
+                # filepath = 'static/files/' + filename
                 path = os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename)
                 file.save(path)
 
-                user_resume = parse.parse(file.filename)
-                rs = rec_system.rec_system()
+                user_keywords = parse_resume(path)
+                rs = rec_system(size, funding, location, user_keywords)
 
                 return redirect(url_for('result',
                                         filename=filename))
