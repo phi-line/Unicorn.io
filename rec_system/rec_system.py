@@ -28,29 +28,30 @@ industry_keywords = {
 }
 
 class rec_system:
-    def __init__(self):
+    def __init__(self, user_pref_series='A', user_pref_location='CA', \
+        user_pref_size=55, user_profile_keywords={}):
 
         # user data
-        self.user_pref_series = None
-        self.user_pref_location = None
-        self.user_pref_size = None
-        self.user_profile_keywords = {}
+        self.user_pref_series = user_pref_series
+        self.user_pref_location = user_pref_location
+        self.user_pref_size = user_pref_size
+        self.user_profile_keywords = user_profile_keywords
 
         # company data
         self.companies_data = {}
 
-    def loadUserData(self, json_data):
+    # def loadUserData(self, json_data):
 
-        # test json parsing code
-        json_decode=json.load(json_data)
-        # for item in json_decode:
-        #     print(item.get('labels').get('en').get('value'))
+    #     # test json parsing code
+    #     json_decode=json.load(json_data)
+    #     # for item in json_decode:
+    #     #     print(item.get('labels').get('en').get('value'))
 
-        # test user, replace with user data from resume scrub
-        self.user_pref_size = 55
-        self.user_pref_location = 'CA'
-        self.user_pref_series = 'C'
-        self.user_profile_keywords = {'web': 0.09090909090909091, 'software': 0.5454545454545454, 'hardware': 0.18181818181818182, 'security': 0.06060606060606061, 'big data': 0.06060606060606061, 'mobile': 0.06060606060606061}
+    #     # test user, replace with user data from resume scrub
+    #     self.user_pref_size = 55
+    #     self.user_pref_location = 'CA'
+    #     self.user_pref_series = 'C'
+    #     self.user_profile_keywords = {'web': 0.09090909090909091, 'software': 0.5454545454545454, 'hardware': 0.18181818181818182, 'security': 0.06060606060606061, 'big data': 0.06060606060606061, 'mobile': 0.06060606060606061}
 
     def loadCompaniesData(self):
         self.companies_data = {}
