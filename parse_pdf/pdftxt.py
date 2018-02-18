@@ -28,7 +28,7 @@ def convert_pdf_to_txt(path, output_path):
     fp.close()
     device.close()
     retstr.close()
-    with open(output_path, 'w') as output_f:
+    with open(output_path, 'wb') as output_f:
       output_f.write(text)
       output_f.close()
 
