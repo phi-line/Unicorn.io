@@ -12,20 +12,9 @@ from json import dumps, loads
 import requests
 from user_key import USER_KEY
 
-industry_keywords = {
-  "big data": ["scalable", "scalability", "big", "data", "sql", "mongodb", "python","cloud", \
-    "mining", "database","aws","gcp","global","expand","ai","intelligent","learn","intelligence"],
-  "software": ["object","oriented","system","design","scalable","database","systems", \
-    "object-oriented","algorithm","software","debugging","debug","architecture", \
-    "java","python","c++","application","algorithms","stack","app","vision","learn","algorithm"],
-  "web": ["es6","es5","eslint","javascript","typescript","ajax","react","reactjs", \
-    "angular","angularjs","http","web","website","websites","node","js","html","css","nodejs","interface"],
-  "mobile": ["ios","android","objective-c","native","swift","mobile","accessible","phone","app"],
-  "hardware": ["arduino","matlab","raspberry","c","c++","pspice","autodesk","cad","solidworks", \
-    "circuit","circuitlab","signal","hardware","drone","device","sensor","processor","chip"],
-  "security": ["cyber","security","defense","operating","kernel","thread","process","flag","cft","threat"],
-  "finance": ["cryptocurrency","bitcoin","blockchain","trading","quant","ether","coin","asset"]
-}
+with open('keywords.json', 'r') as f: 
+  industry_keywords = json.load(f)
+  f.close()
 
 class rec_system:
     def __init__(self, user_pref_series='A', user_pref_location='CA', \
@@ -129,5 +118,5 @@ class rec_system:
 
 user_recs = rec_system()
 user_recs.loadCompaniesData()
-user_recs.loadUserData(open('test_json.json'))
+# user_recs.loadUserData(open('test_json.json'))
 print("TOP 10 RANKINGS: "+str(user_recs.rankCompaniesForUser()[:10]))

@@ -1,21 +1,10 @@
 
 import re
+import json 
 
-dictionary = {
-  "big data": ["scalable", "scalability", "big", "data", "sql", "mongodb", "python","cloud", \
-    "mining", "database","aws","gcp",""],
-  "software": ["object","oriented","system","design","scalable","database","systems", \
-    "object-oriented","algorithm","software","debugging","debug","architecture", \
-    "java","python","c++","application","algorithms","stack"],
-  "web": ["es6","es5","eslint","javascript","typescript","ajax","react","reactjs", \
-    "angular","angularjs","http","web","website","websites","node","js","html","css","nodejs"],
-  "mobile": ["ios","android","objective-c","native","swift","mobile"],
-  "hardware": ["arduino","matlab","raspberry","c","c++","pspice","autodesk","cad","solidworks", \
-    "circuit","circuitlab","signal"],
-  "networks": ["cyber","security","defense","operating","kernel","thread","process","flag","ctf", \
-    "networks", "network","infrastructure"],
-  "finance": ["cryptocurrency","bitcoin","blockchain","trading","quant"]
-}
+with open('keywords.json', 'r') as f: 
+  dictionary = json.load(f)
+  f.close()
 
 def tokenize(text):
   clean_string = re.sub('[^a-z0-9- ]', ' ', text.lower())
