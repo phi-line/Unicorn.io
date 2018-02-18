@@ -43,11 +43,11 @@ def start():
             if file and allowed_file(file.filename):
                 basedir = abspath(dirname(__file__))
                 filename = secure_filename(file.filename)
-                filepath = 'static/files/' + filename
-                path = os.path.join(basedir, app.config['UPLOAD_FOLDER'], filepath)
+                # filepath = 'static/files/' + filename
+                path = os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename)
                 file.save(path)
 
-                user_keywords = parse_resume(file.filename)
+                user_keywords = parse_resume(path)
                 rs = rec_system(size, funding, location, user_keywords)
 
 
