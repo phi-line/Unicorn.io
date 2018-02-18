@@ -22,7 +22,11 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Company</th>
+<<<<<<< HEAD
             <th scope="col">Contact</th>
+=======
+            <th scope="col">Score</th>
+>>>>>>> 6d992251e0fa651dee045897614fbba35527fcf4
             <th scope="col">Feedback</th>
             <th scope="col">Action</th>
           </tr>
@@ -31,9 +35,30 @@
           {% for i in range(info|length) %}
           <tr>
             <th scope="row">{{i+1}}</th>
+<<<<<<< HEAD
             <td>{{info[i][0]}}</td>
             <td>{{info[i][1]}}</td>
    
+=======
+            <td>{{data[i][0]}}</td>
+            <td>
+              <!-- insert the audio object here through javascript -->
+              <span id = "audio"> </span>
+              <!-- save the audio path in data-file -->
+              <button class="btn btn-primary playButton" name="play" data-file="{{data[i]['audio']}}"><i class="fa fa-microphone" aria-hidden="true"> </i></button>
+            </td>
+
+            <td>{{data[i][1]}}</td>
+            <td>
+              <!-- create a form to call /progress to delete a conversation -->
+              <form method = "POST" action = "{{script}}">
+                <!-- hidden input fields to pass back categoryId and convoId to delete the conversation -->
+                <input type='text' name='categoryId' style='display:none' value="{{data[i]['categoryId']}}">
+                <input type='text' name='convoId' style='display:none' value="{{data[i]['convoId']}}">
+                <button type='submit' class="btn btn-primary" name="delete" value = "delete">Delete</button>
+              </form>
+            </td>
+>>>>>>> 6d992251e0fa651dee045897614fbba35527fcf4
           </tr>
           {% endfor %}
         </tbody>
