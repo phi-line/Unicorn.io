@@ -12,13 +12,13 @@ from json import dumps, loads
 import requests
 from user_key import USER_KEY
 
-with open('keywords.json', 'r') as f: 
+with open('keywords.json', 'r') as f:
   industry_keywords = json.load(f)
   f.close()
 
 class rec_system:
-    def __init__(self, user_pref_series='A', user_pref_location='CA', \
-        user_pref_size=55, user_profile_keywords={}):
+    def __init__(self, user_pref_size=55, \
+        user_pref_series='A', user_pref_location='CA', user_profile_keywords={}):
 
         # user data
         self.user_pref_series = user_pref_series
@@ -116,7 +116,7 @@ class rec_system:
 
         return sorted(company_rankings, key=lambda x: x[1])
 
-user_recs = rec_system()
-user_recs.loadCompaniesData()
+# user_recs = rec_system()
+# user_recs.loadCompaniesData()
 # user_recs.loadUserData(open('test_json.json'))
-print("TOP 10 RANKINGS: "+str(user_recs.rankCompaniesForUser()[:10]))
+# print("TOP 10 RANKINGS: "+str(user_recs.rankCompaniesForUser()[:10]))

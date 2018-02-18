@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 import os, sys
 from os.path import abspath, dirname
-import from '../parse/parse'
-import from '../rec_system'
+import parse, rec_system
 from werkzeug.utils import secure_filename
 UPLOAD_FOLDER = 'static/files/'
 ALLOWED_EXTENSIONS = set(['pdf'])
