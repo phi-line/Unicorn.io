@@ -130,7 +130,6 @@ class rec_system:
 
             if company not in company_names:
                 company_names.append(company)
-                print(self.companies_data[company]['url'])
                 company_rankings.append((company,
                                          self.getRankingForCompany(company),
                                          emailString,
