@@ -1,7 +1,7 @@
 
 # goal of recommendation system:
 #  1. guage user's technical ability and interests (front end, back end, etc.)
-#  2. get user's company preference for series A or B, location, size
+#  2. get user's company preference for series A or B, size
 #  3. filter list of companies applicable for user's preferences
 #  4. rank remaining companies based on user's technical ability, user's interests, and company viability
 
@@ -18,11 +18,10 @@ with open('keywords.json', 'r') as f:
 
 class rec_system:
     def __init__(self, user_pref_size=55, \
-        user_pref_series='A', user_pref_location='CA', user_profile_keywords={}):
+        user_pref_series='A', user_profile_keywords={}):
 
         # user data
         self.user_pref_series = user_pref_series
-        self.user_pref_location = user_pref_location
         self.user_pref_size = user_pref_size
         self.user_profile_keywords = user_profile_keywords
 
@@ -38,7 +37,6 @@ class rec_system:
 
     #     # test user, replace with user data from resume scrub
     #     self.user_pref_size = 55
-    #     self.user_pref_location = 'CA'
     #     self.user_pref_series = 'C'
     #     self.user_profile_keywords = {'web': 0.09090909090909091, 'software': 0.5454545454545454, 'hardware': 0.18181818181818182, 'security': 0.06060606060606061, 'big data': 0.06060606060606061, 'mobile': 0.06060606060606061}
 
@@ -136,8 +134,3 @@ class rec_system:
                                          self.companies_data[company]['profile_image_url']))
         results = sorted(company_rankings, key=lambda x: x[1])
         return results[:12]
-
-# user_recs = rec_system()
-# user_recs.loadCompaniesData()
-# user_recs.loadUserData(open('test_json.json'))
-# print("TOP 10 RANKINGS: "+str(user_recs.rankCompaniesForUser()[:10]))
