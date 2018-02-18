@@ -89,14 +89,17 @@ class rec_system:
 
         # calculates difference between company and user keyword vectors
         for key in industry_keywords:
-            value_company = 1.0
-            value_user = 0.0
-            if key in freq_vec_company:
-                value_company = freq_vec_company[key]
-            if key in freq_vec_user:
-                value_user = freq_vec_user[key]
+            difference = 1.0
 
-            rank_sum += math.fabs(value_company-value_user)
+            if key in freq_vec_company:
+                if key in freq_vec_user:
+                    difference = math.fabs(freq_vec_company[key]-freq_vec_user[key])
+                else:
+                    difference = math.fabs(freq_vec_company[key])
+            elif key in freq_vec_user:
+                    difference = math.fabs(freq_vec_user[key])
+
+            rank_sum += difference
 
         # changes rating based on user preference for size
         if company_data['num_employees_max'] != None and company_data['num_employees_min'] != None:
@@ -114,19 +117,23 @@ class rec_system:
         return rank_sum
 
     def rankCompaniesForUser(self):
+        company_names = []
         company_rankings = []
+
         for company in self.companies_data:
             sizeString = "Unknown"
             if self.companies_data[company]['num_employees_min'] != None and self.companies_data[company]['num_employees_max'] != None:
                 sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])
 
-            company_rankings.append((company,
-                                     self.getRankingForCompany(company),
-                                     self.companies_data[company]['email'],
-                                     sizeString,
-                                     None,
-                                     self.companies_data[company]['short_description'],
-                                     self.companies_data[company]['profile_image_url']))
+            if company not in company_names:
+                company_names.append(company)
+                company_rankings.append((company,
+                                         self.getRankingForCompany(company),
+                                         self.companies_data[company]['email'],
+                                         sizeString,
+                                         None,
+                                         self.companies_data[company]['short_description'],
+                                         self.companies_data[company]['profile_image_url']))
         results = sorted(company_rankings, key=lambda x: x[1])
         return results[:12]
 
