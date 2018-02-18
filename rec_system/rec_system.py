@@ -11,17 +11,16 @@ import json
 from json import dumps, loads
 import requests
 from user_key import USER_KEY
-import pprint
 
 industry_keywords = {
   "big data": ["scalable", "scalability", "big", "data", "sql", "mongodb", "python","cloud", \
-    "mining", "database","aws","gcp","global","expand","ai","intelligen","learn"],
+    "mining", "database","aws","gcp","global","expand","ai","intelligent","learn","intelligence"],
   "software": ["object","oriented","system","design","scalable","database","systems", \
     "object-oriented","algorithm","software","debugging","debug","architecture", \
     "java","python","c++","application","algorithms","stack","app","vision","learn","algorithm"],
   "web": ["es6","es5","eslint","javascript","typescript","ajax","react","reactjs", \
     "angular","angularjs","http","web","website","websites","node","js","html","css","nodejs","interface"],
-  "mobile": ["ios","android","objective-c","native","swift","mobile","accessib","phone","app"],
+  "mobile": ["ios","android","objective-c","native","swift","mobile","accessible","phone","app"],
   "hardware": ["arduino","matlab","raspberry","c","c++","pspice","autodesk","cad","solidworks", \
     "circuit","circuitlab","signal","hardware","drone","device","sensor","processor","chip"],
   "security": ["cyber","security","defense","operating","kernel","thread","process","flag","cft","threat"],
@@ -44,34 +43,33 @@ class rec_system:
 
         # test json parsing code
         json_decode=json.load(json_data)
-        for item in json_decode:
-            print(item.get('labels').get('en').get('value'))
+        # for item in json_decode:
+        #     print(item.get('labels').get('en').get('value'))
 
-        # test user
-        self.user_pref_size = 50
+        # test user, replace with user data from resume scrub
+        self.user_pref_size = 55
         self.user_pref_location = 'CA'
-        self.user_pref_series = 'B'
-        self.user_profile_keywords = {'big data': 1.0, 'software': 0.0}
+        self.user_pref_series = 'C'
+        self.user_profile_keywords = {'web': 0.09090909090909091, 'software': 0.5454545454545454, 'hardware': 0.18181818181818182, 'security': 0.06060606060606061, 'big data': 0.06060606060606061, 'mobile': 0.06060606060606061}
 
     def loadCompaniesData(self):
         self.companies_data = {}
 
         org = 'sequoia-capital'
-        request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
+        # request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
+        request = requests.get(f"http://62f2328a.ngrok.io/all")
         j = loads(request.text)
 
-        # pp = pprint.PrettyPrinter(depth=1)
-        for company_entry in j['data']['items']:
-            # pp.pprint(company_entry)
-            name = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
-            num_employees_max = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max']
-            num_employees_min = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_min']
-            contact_email = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email']
-            description = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['description']
-            funding_series = company_entry['relationships']['funding_round']['properties']['series']
-            money_raised = company_entry['relationships']['funding_round']['properties']['money_raised_usd']
+        for company_entry in j:
+            name = company_entry['name']
+            num_employees_max = company_entry['num_employees_max']
+            num_employees_min = company_entry['num_employees_min']
+            contact_email = company_entry['email']
+            description = company_entry['description']
+            funding_series = company_entry['series']
+            money_raised = company_entry['money_raised_usd']
 
-            self.companies_data[name] = {'num_employees_min':num_employees_min, 'num_employees_max':num_employees_max,'contact_email':contact_email,'description':description,'funding_series':funding_series,'money_raised':money_raised}
+            self.companies_data[name] = {'num_employees_min': num_employees_min, 'num_employees_max': num_employees_max,'contact_email': contact_email,'description': description,'funding_series': funding_series,'money_raised': money_raised}
 
     def getRankingForCompany(self, company_name):
         rank_sum = 0
