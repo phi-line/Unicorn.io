@@ -199,15 +199,11 @@ a:focus, a:hover {
 }
 
 .content-section {
-  padding-top: 150px;
+  padding-top: 50px;
   background-color: #000;
 }
 
 @media (min-width: 992px) {
-  .content-section {
-    padding-top: 200px;
-    background-color: #000;
-  }
   #map {
     height: 350px;
   }
@@ -327,5 +323,13 @@ img::-moz-selection {
 }
 
 li:hover {
-     background-color:#42DCA3;
+    background-color:#42DCA3;
+}
+
+.card {
+  height: 100%;
+}
+
+.card:hover {
+    background-color:#42DCA3;
 }

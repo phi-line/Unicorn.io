@@ -4,29 +4,32 @@
 
     <section id="about" class="content-section text-center">
 
-    <div class='container'>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col" class='text-left'>Company</th>
-            <th scope="col" class='text-left'>Contact</th>
-            <th scope="col" class='text-left'>Size</th>
-            <!-- <th scope="col">Website</th> -->
-          </tr>
-        </thead>
-        <tbody>
-          {% for i in range(info|length) %}
-          <tr>
-            <th scope="row">{{i+1}}</th>
-            <td class='text-left'>{{info[i][0]}}</td>
-            <td class='text-left'>{{info[i][2]}}</td>
-            <td class='text-left'>{{info[i][3]}}</td>
-            <!-- <td>{{info[i][4]}}</td> -->
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+    <div class="container is-fluid">
+      <div class="columns is-desktop">
+      {% for i in range(info|length) %}
+        {% if i % 3 == 0 %}
+        </div><div class="columns is-desktop">
+        {% endif %}
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src={{info[i][6]}} alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">{{info[i][0]}}</p>
+                  <p class="subtitle is-6">{{info[i][2]}}</p>
+                  {{info[i][5]}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
     </div>
 
 {% endblock %}

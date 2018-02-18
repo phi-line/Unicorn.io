@@ -46,30 +46,24 @@ class rec_system:
         self.companies_data = {}
 
         org = 'sequoia-capital'
-        request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
-        # request = requests.get(f"http://62f2328a.ngrok.io/all")
-        # request = requests.get(f"0.0.0.0:9999/all")
+        # request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
+        request = requests.get(f"http://62f2328a.ngrok.io/all")
         j = loads(request.text)
 
-        # for company_entry in j:
-        #     name = company_entry['name']
-        #     num_employees_max = company_entry['num_employees_max']
-        #     num_employees_min = company_entry['num_employees_min']
-        #     contact_email = company_entry['email']
-        #     description = company_entry['description']
-        #     funding_series = company_entry['series']
-        #     money_raised = company_entry['money_raised_usd']
+        for company_entry in j:
+            name = company_entry['name']
+            self.companies_data[name] = company_entry
 
-        for company_entry in j['data']['items']:
-            name = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
-            num_employees_max = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max']
-            num_employees_min = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_min']
-            contact_email = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email']
-            description = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['description']
-            funding_series = company_entry['relationships']['funding_round']['properties']['series']
-            money_raised = company_entry['relationships']['funding_round']['properties']['money_raised_usd']
-
-            self.companies_data[name] = {'num_employees_min': num_employees_min, 'num_employees_max': num_employees_max,'contact_email': contact_email,'description': description,'funding_series': funding_series,'money_raised': money_raised}
+        # for company_entry in j['data']['items']:
+        #     name = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
+        #     num_employees_max = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max']
+        #     num_employees_min = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_min']
+        #     contact_email = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email']
+        #     description = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['description']
+        #     funding_series = company_entry['relationships']['funding_round']['properties']['series']
+        #     money_raised = company_entry['relationships']['funding_round']['properties']['money_raised_usd']
+        #
+        #     self.companies_data[name] = {'num_employees_min': num_employees_min, 'num_employees_max': num_employees_max,'contact_email': contact_email,'description': description,'funding_series': funding_series,'money_raised': money_raised}
 
     def getRankingForCompany(self, company_name):
         rank_sum = 0
@@ -110,11 +104,11 @@ class rec_system:
                 rank_sum = rank_sum*0.75
 
         # changes rating based on user preference for series
-        if company_data['funding_series'] != None:
+        if company_data['series'] != None:
             value_map = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5}
-            if math.fabs(value_map[company_data['funding_series']]-value_map[self.user_pref_series]) == 0:
+            if math.fabs(value_map[company_data['series']]-value_map[self.user_pref_series]) == 0:
                 rank_sum = rank_sum*0.8
-            elif math.fabs(value_map[company_data['funding_series']]-value_map[self.user_pref_series]) == 1:
+            elif math.fabs(value_map[company_data['series']]-value_map[self.user_pref_series]) == 1:
                 rank_sum = rank_sum*0.925
 
         return rank_sum
@@ -126,9 +120,15 @@ class rec_system:
             if self.companies_data[company]['num_employees_min'] != None and self.companies_data[company]['num_employees_max'] != None:
                 sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])
 
-            company_rankings.append((company, self.getRankingForCompany(company), self.companies_data[company]['contact_email'],sizeString, None, self.companies_data[company]['description']))
+            company_rankings.append((company,
+                                     self.getRankingForCompany(company),
+                                     self.companies_data[company]['email'],
+                                     sizeString,
+                                     None,
+                                     self.companies_data[company]['short_description'],
+                                     self.companies_data[company]['profile_image_url']))
         results = sorted(company_rankings, key=lambda x: x[1])
-        return results
+        return results[:12]
 
 # user_recs = rec_system()
 # user_recs.loadCompaniesData()
