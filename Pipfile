@@ -11,6 +11,7 @@ pycrunchbase = "*"
 requests = "*"
 tinydb = "*"
 quart = "*"
+flask = "*"
 
 
 [dev-packages]
