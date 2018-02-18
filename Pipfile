@@ -12,7 +12,7 @@ requests = "*"
 tinydb = "*"
 quart = "*"
 flask = "*"
-
+"pdfminer.six" = "*"
 
 [dev-packages]
 
