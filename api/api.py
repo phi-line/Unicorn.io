@@ -22,7 +22,8 @@ def api_dept():
     print(list(db.tables()))
     table = db.table('sequoia-capital')
 
-    return jsonify(table.all()), 200
+
+    return jsonify(db.all()), 200
 
 
 if __name__ == "__main__":
