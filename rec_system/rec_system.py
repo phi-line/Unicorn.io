@@ -113,8 +113,10 @@ class rec_system:
         company_rankings = []
         for company in self.companies_data:
             company_rankings.append((company, self.getRankingForCompany(company)))
-
-        return sorted(company_rankings, key=lambda x: x[1])
+        results = sorted(company_rankings, key=lambda x: x[1])
+        print("results")
+        print(results)
+        return results
 
 # user_recs = rec_system()
 # user_recs.loadCompaniesData()

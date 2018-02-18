@@ -1,60 +1,91 @@
- 
+ADDRESS  
+11 Beechmont St. 
+Worcester, MA 01609
 
-EXPERIENCE 
+OBJECTIVE 
+Summer Internship related to Software Engineering 
 
-DANIEL SONG 
+YANG LIU 
 
-112 Willow St, Acton, MA. · 978-319-1368 
+yliu17@wpi.edu 
+508-373-3494 
 
-dansong01@gmail.com · http://users.wpi.edu/~dlsong/ 
-
- https://github.com/1nkling  
-
-[AUGUST 2017] – [PRESENT]  
-SOFTWARE ENGINEER, MIT LINCOLN LABORATORIES 
-Implemented/Optimized image processing algorithms (NUC, CFAR) on Jetson TX1/TX2 boards in 
-CUDA/C++ for an autonomous closed-loop CubeSat optical sensor system. 
- 
-[JUNE 2017] – [AUGUST 2017]  
-APPLICATIONS ENGINEERING INTERN, SILICON LABS 
-Created sample applications in C to demonstrate the functionality of proprietary radio boards using 
-Zigbee/Thread protocols to potential customers.  Currently in use by Ring, Lutron and more. 
+github.com/byliuyang 
 
 EDUCATION 
-
-[AUGUST 2014 - PRESENT] 
-B.S. ELECTRICAL AND COMPUTER ENGINEERING (ECE),  
-MINOR IN COMPUTER SCIENCE (CS) 
-Worcester Polytechnic Institute (WPI), Worcester, MA. GPA 3.77, graduating on May 2018  
-CS Coursework: Introduction to Program Design, Object-Oriented Design Concepts, Systems 
-Programming Concepts, Machine Org. & Assembly, Algorithms 
-TBC Spring 2018: Database Systems I&II, Artificial Intelligence, Computer Networks 
-ECE Coursework: Digital Circuit Design, Digital System Design with FPGAs, Embedded Computing in 
-Engineering Design, Real Time Embedded Systems, Continuous/Discrete Time Analysis 
+Worcester Polytechnic Institute (WPI), Worcester, MA 
+Bachelor of Science in Computer Science, May 2018 
+           
+RELATED COURSEWORK 
+Intro to Machine Organization & Assembly Language, Algorithms, Software Engineering, Database Systems I, Computer Networks, 
+Operating Systems, Programming Languages, Intro to AI, Webware, Computer Network Security, Computer Graphics 
 
 SKILLS 
-
-  Programming Languages: Racket, Java, C, C++, 
-
-  Computer Skills: Android Studios, Eclipse, 
-
-CUDA, CSS, HTML, XML  
-
-  Communication Protocols: Zigbee, Thread 
-
-GitHub, Git Bash, cmd, Terminal, PuTTY, 
-Sublime Text, EMACS, MultiSim, MATLAB, 
-Verilog 
-
-PROJECTS 
-
-JANE, HACK@WPI, JANUARY 2017 
-Created an interactive Facebook bot using Python that could get weather info, provide images of 
-specific objects, translate between several languages, and much more. 
-SUSTAIN, WPI IQ PROJECT, FALL 2016 
-Created an Android application that uses responses to dynamically generated questions to 
-determine an individual’s level of environmental sustainability and recommend improvements. 
+Web Development  
+ 
+ 
 
  
+ 
+
+ 
+ 
+
+Ruby on Rails, NodeJs, Java Spring, SQL, Restful API Design, Content Negotiation, Entity-relation  
+Diagram, UML, Postgres, Oracle, MySQL, Websocket, Angular 2, React, Responsive Layouts, Regular  
+Expression, AJAX, Reactive Programming, Redux 
+
+Mobile Development 
+
+Push Notification, Customized UI Components, Content Providers, Delegate, Sqlite 
+
+Computer Languages 
+
+JAVA, C, C++, Swift, Objective-C, ES6, Typescript, Ruby, Python, Bash 
+
+Testing   
+
+ 
+
+Unit Testing, E2E Testing, Test Driven Development, Behavior Driven Development    
+
+Computer Science   
+
+Fundamental Algorithms & Data Structures, Network Security, Operating System Design 
+
+PROJECTS 
+PopMovies, https://github.com/byliuyang/PopMovies, Android Move App, Java, Personal, Nov 2015-Present 
+Designed and implemented database and unit testings, and implemented HTTP JSON API, local storage, content providers, YouTube 
+preview, responsive layouts 
+
+Connect N, https://github.com/byliuyang/connect-n-ai, AI Solving Connect-N Game,  Java, Personal, Jan 2016 
+Designed the UML and the heuristics, and implemented min-max algorithm with alpha-beta pruning 
+
+harryHttpd, https://github.com/byliuyang/harryHttpd, Multithreaded Light Weight HTTP Server, C, Personal, Nov 2015 
+Implemented HTTP protocol, file I/O and optimized concurrency 
+
+netGuard, https://github.com/byliuyang/netGuard, DNS Capacity based Multithread DDOS Guard, Python, Oct 2016 
+Implemented DNS traffic analyzer and IP tables based NAT connection controller 
+
+ANN, https://github.com/WPI-CS4341/Artificial-Neural-Networks, An Artificial Neural Network, Python, with one partner, Jan 2016 
+Designed a neural network and implemented back propagation algorithm to classify data points 
+
+Movie Search,  http://cs4241-a6-byliuyang.herokuapp.com/README.md, Movie Info website, Nov 2016 
+Implemented material design and responsive layouts and a ruby on rails like backend framework in Node.js from scratch 
+                           
+EXPERIENCES 
+UI Designer & Front-End developer, Concordya Inc, Beijing, China, May 2015-August 2015 
+Design and implement the new homepage for the company, http://byliuyang.github.io/guanplushomepage  
+
+Mobile & Backend developer, ASSISTments Lab, WPI, Worcester, MA, Dec 2016-Present 
+Refactored the iOS App, https://itunes.apple.com/us/app/assistments/id721911528?mt=8, and backend with new interfaces and design 
+patterns, Developed YouTube SDK in Swift and refactored backend 
+
+HACKTHONS 
+UI Designer & iOS Developer, team Knockt, http://knockt.com, at HACK@WPI, Best software award for 2017 season 
+Designed the UI and interaction for the web app and mobile, and developed an online iOS app with the notification system. 
+
+UI Designer, Front-end Developer and API Designer, team Code Etch, http://code-etch.herokuapp.com, at HACK@Brown 
+Designed the API with RAML, designed user interaction with sketch and implemented the front-end with Angular 4.0 Beta
 
 
