@@ -35,16 +35,15 @@ def start():
                 flash('No file part')
                 return redirect(url_for('start'))
             file = request.files['file']
-            # if user does not select file, browser also
+            # if user does not selgitect file, browser also
             # submit a empty part without filename
             if file.filename == '':
                 flash('No selected file')
                 return redirect(request.url)
             if file and allowed_file(file.filename):
                 basedir = abspath(dirname(__file__))
-                filename = secure_filename(file.filename)
-                # filepath = 'static/files/' + filename
-                path = os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename)
+                filepath = secure_filename(file.filename)
+                path = os.path.join(basedir, app.config['UPLOAD_FOLDER'], filepath)
                 file.save(path)
 
                 user_keywords = parse_resume(path)
@@ -52,7 +51,7 @@ def start():
 
 
                 return redirect(url_for('result',
-                                        filename=filename))
+                                        filename=path))
         else:
             return render_template('start.html')
 
