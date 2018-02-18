@@ -89,14 +89,17 @@ class rec_system:
 
         # calculates difference between company and user keyword vectors
         for key in industry_keywords:
-            value_company = 1.0
-            value_user = 0.0
-            if key in freq_vec_company:
-                value_company = freq_vec_company[key]
-            if key in freq_vec_user:
-                value_user = freq_vec_user[key]
+            difference = 1.0
 
-            rank_sum += math.fabs(value_company-value_user)
+            if key in freq_vec_company:
+                if key in freq_vec_user:
+                    difference = math.fabs(freq_vec_company[key]-freq_vec_user[key])
+                else:
+                    difference = math.fabs(freq_vec_company[key])
+            elif key in freq_vec_user:
+                    difference = math.fabs(freq_vec_user[key])
+
+            rank_sum += difference
 
         # changes rating based on user preference for size
         if company_data['num_employees_max'] != None and company_data['num_employees_min'] != None:
