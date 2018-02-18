@@ -21,8 +21,8 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Topic</th>
-            <th scope="col">Audio</th>
+            <th scope="col">Company</th>
+            <th scope="col">Score</th>
             <th scope="col">Feedback</th>
             <th scope="col">Action</th>
           </tr>
@@ -31,7 +31,7 @@
           {% for i in range(data | length) %}
           <tr>
             <th scope="row">{{i+1}}</th>
-            <td>{{data[i]['categoryType']}}</td>
+            <td>{{data[i][0]}}</td>
             <td>
               <!-- insert the audio object here through javascript -->
               <span id = "audio"> </span>
@@ -39,7 +39,7 @@
               <button class="btn btn-primary playButton" name="play" data-file="{{data[i]['audio']}}"><i class="fa fa-microphone" aria-hidden="true"> </i></button>
             </td>
 
-            <td>{{data[i]['feedback']}}</td>
+            <td>{{data[i][1]}}</td>
             <td>
               <!-- create a form to call /progress to delete a conversation -->
               <form method = "POST" action = "{{script}}">
