@@ -14,7 +14,7 @@ db = TinyDB(join(DB_ROOT, 'database.json'))
 
 @app.route('/')
 async def hello():
-    return 'Foothill API'
+    return 'Unicorn.io API'
 
 
 @app.route('/list', methods=['GET'])
