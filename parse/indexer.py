@@ -12,7 +12,8 @@ dictionary = {
   "mobile": ["ios","android","objective-c","native","swift","mobile"],
   "hardware": ["arduino","matlab","raspberry","c","c++","pspice","autodesk","cad","solidworks", \
     "circuit","circuitlab","signal"],
-  "security": ["cyber","security","defense","operating","kernel","thread","process","flag","cft"],
+  "networks": ["cyber","security","defense","operating","kernel","thread","process","flag","ctf", \
+    "networks", "network","infrastructure"],
   "finance": ["cryptocurrency","bitcoin","blockchain","trading","quant"]
 }
 
