@@ -103,6 +103,8 @@ class rec_system:
         if company_data['num_employees_max'] != None and company_data['num_employees_min'] != None:
             if self.user_pref_size <= company_data['num_employees_max'] and self.user_pref_size >= company_data['num_employees_min']:
                 rank_sum = rank_sum*0.75
+            elif self.user_pref_size < company_data['num_employees_max']*0.5:
+                rank_sum = rank_sum*1.25
 
         # changes rating based on user preference for series
         if company_data['series'] != None:
