@@ -117,19 +117,23 @@ class rec_system:
         return rank_sum
 
     def rankCompaniesForUser(self):
+        company_names = []
         company_rankings = []
+
         for company in self.companies_data:
             sizeString = "Unknown"
             if self.companies_data[company]['num_employees_min'] != None and self.companies_data[company]['num_employees_max'] != None:
                 sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])
 
-            company_rankings.append((company,
-                                     self.getRankingForCompany(company),
-                                     self.companies_data[company]['email'],
-                                     sizeString,
-                                     None,
-                                     self.companies_data[company]['short_description'],
-                                     self.companies_data[company]['profile_image_url']))
+            if company not in company_names:
+                company_names.append(company)
+                company_rankings.append((company,
+                                         self.getRankingForCompany(company),
+                                         self.companies_data[company]['email'],
+                                         sizeString,
+                                         None,
+                                         self.companies_data[company]['short_description'],
+                                         self.companies_data[company]['profile_image_url']))
         results = sorted(company_rankings, key=lambda x: x[1])
         return results[:12]
 
