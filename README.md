@@ -11,18 +11,18 @@ Upload your resume to unicorn.io, select a couple parameters for companies, then
 next unicorn tailored just for you! 
 
 ### Teammates
-Magnus Johnson
-Kishan 
-Anqi Lu
-Mojia Shen 
+* Magnus Johnson
+* Kishan 
+* Anqi Lu
+* Mojia Shen 
 
 ### Python Version
 We are using Python 3.6.
 
 ### Running the app in pipenv
-`pip3 install pipenv`
-`pipenv install`
-`pipenv shell`
+* `pip3 install pipenv`
+* `pipenv install`
+* `pipenv shell`
 
-### Starting the Website
+### Starting the Website in pipenv
 `python(3) app.py`
