@@ -1,4 +1,4 @@
-Unicorn.io webapp
+# Unicorn.io 
 
 ### What it does
 This project is created during Treehacks 2018 at Stanford University. It aims to address the 
