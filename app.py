@@ -30,7 +30,6 @@ def start():
             size = int(request.form['size'])
             print('size', size)
             funding = request.form['funding']
-            location = request.form['location']
             # check if the post request has the file part
             if 'file' not in request.files:
                 flash('No file part')
@@ -48,7 +47,7 @@ def start():
                 file.save(path)
 
                 user_keywords = parse_resume(path)
-                rs = rec_system(size, funding, location, user_keywords)
+                rs = rec_system(size, funding, user_keywords)
                 rs.loadCompaniesData()
                 companyRankings = rs.rankCompaniesForUser()
                 print("company rankings", companyRankings)
