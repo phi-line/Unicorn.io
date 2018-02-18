@@ -11,10 +11,10 @@ Upload your resume to unicorn.io, select a couple parameters for companies, then
 next unicorn tailored just for you! 
 
 ### Teammates
-* Magnus Johnson
-* Kishan 
-* Anqi Lu
-* Mojia Shen 
+* Magnus Johnson (MIT)
+* Kishan (Foothill College)
+* Anqi Lu (Worcester Polytechnic Institute)
+* Mojia Shen (Wellesley College)
 
 ### Python Version
 We are using Python 3.6.
