@@ -49,9 +49,6 @@ def start():
                 user_resume = parse.parse(file.filename)
                 rs = rec_system.rec_system()
 
-
-
-
                 return redirect(url_for('result',
                                         filename=filename))
         else:
