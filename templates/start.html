@@ -21,7 +21,7 @@
               <form method='POST' enctype="multipart/form-data">
                 <div class="form-group text-left">
                   <label for="exampleInputFile">File input</label>
-                  <input type="file" class="form-control-file" name="file" 
+                  <input type="file" class="form-control-file" name="file"
                   type="file" accept=".pdf" aria-describedby="fileHelp">
                 </div>
 
@@ -29,22 +29,30 @@
                   <label for="exampleInputEmail1">Company Size</label>
                   <ul class="size">
                     <li>
-                        <input type="radio" id="a25" name="amount" />
-                        <label for="a25">$25</label>
+                        <input class='btn btn-secondary' name ='size' type="radio" value='1' id="1"/>
+                        <label for="1">1-10</label>
                     </li>
                     <li>
-                        <input type="radio" id="a50" name="amount" />
-                        <label for="a50">$50</label>
+                        <input class='btn btn-secondary' name ='size' type="radio" value='11' id="11"/>
+                        <label for="11">11-50</label>
                     </li>
-                  <ul>
-
-                  <input type='radio' class="btn btn-secondary" name ='size' value='1'>1-10</input>
-                  <input type="radio" class="btn btn-secondary" name ='size' value='11'>11-50</input>
-                  <input type="radio" class="btn btn-secondary" name ='size' value='51'>51-100</input>
-                  <input type="radio" class="btn btn-secondary" name ='size' value='101'>101-250</input>
-                  <input type="radio" class="btn btn-secondary" name ='size' value='251'>251-500</input>
-                  <input type="radio" class="btn btn-secondary" name ='size' value='500'>500+</input>
-                  <input type="radio" class="btn btn-secondary" name ='size' value='agnostic'>Agnositic</input>
+                    <li>
+                        <input class='btn btn-secondary' name ='size' type="radio" value='51' id="51"/>
+                        <label for="51">51-100</label>
+                    </li>
+                    <li>
+                        <input class='btn btn-secondary' name ='size' type="radio" value='101' id="101"/>
+                        <label for="101">101-250</label>
+                    </li>
+                    <li>
+                        <input class='btn btn-secondary' name ='size' type="radio" value='251' id="251"/>
+                        <label for="251">251-500</label>
+                    </li>
+                    <li>
+                        <input class='btn btn-secondary' name ='size' type="radio" value='500' id="500"/>
+                        <label for="500">500+</label>
+                    </li>
+                  </ul>
                 </div>
 
                 <div class="form-group text-left">

@@ -1,8 +1,10 @@
+from io import StringIO
+from six import BytesIO as StringIO
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
-from io import StringIO
+
 
 
 def convert_pdf_to_txt(path, output_path):

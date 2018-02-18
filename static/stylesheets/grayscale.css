@@ -281,3 +281,47 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+.size {
+     list-style-type:none;
+     margin:25px 0 0 0;
+     padding:0;
+}
+
+.size li {
+     float:left;
+     margin:0 5px 0 0;
+    width:100px;
+    height:40px;
+    position:relative;
+}
+
+.size label, .size input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.size input[type="radio"] {
+    opacity:0.01;
+    z-index:100;
+}
+
+.size input[type="radio"]:checked + label,
+.Checked + label {
+    background:yellow;
+}
+
+.size label {
+     padding:5px;
+     border:1px solid #CCC;
+     cursor:pointer;
+    z-index:90;
+}
+
+.size label:hover {
+     background:#DDD;
+}

@@ -28,6 +28,7 @@ def allowed_file(filename):
 def start():
         if request.method == 'POST':
             size = int(request.form['size'])
+            print('size', size)
             funding = request.form['funding']
             location = request.form['location']
             # check if the post request has the file part
