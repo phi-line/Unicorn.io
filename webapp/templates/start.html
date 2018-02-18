@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+    {% block content %}
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Unicorn.io</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <section id="about" class="content-section text-center">
+      <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <form method='POST' enctype="multipart/form-data">
+                <div class="form-group text-left">
+                  <label for="exampleInputFile">File input</label>
+                  <input type="file" class="form-control-file" name="file" aria-describedby="fileHelp">
+                </div>
+
+                <div class="form-group text-left">
+                  <label for="exampleInputEmail1">Company Size</label>
+                  <input type='radio' class="btn btn-secondary" name ='size' value='1'>1-10</input>
+                  <input type="radio" class="btn btn-secondary" name ='size' value='11'>11-50</input>
+                  <input type="radio" class="btn btn-secondary" name ='size' value='51'>51-100</input>
+                  <input type="radio" class="btn btn-secondary" name ='size' value='101'>101-250</input>
+                  <input type="radio" class="btn btn-secondary" name ='size' value='251'>251-500</input>
+                  <input type="radio" class="btn btn-secondary" name ='size' value='500'>500+</input>
+                  <input type="radio" class="btn btn-secondary" name ='size' value='agnostic'>Agnositic</input>
+                </div>
+
+                <div class="form-group text-left">
+                  <label for="exampleInputEmail1">Funding Round</label>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='seed'>Seed</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='A'>Series A</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='B'>Series B</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='C'>Series C</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='D'>Series D</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='E'>Series E</button>
+                  <br>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='secondary'>Secondary Market</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='ipo'>IPO</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='acquired'>Acquired</button>
+                  <input type="radio" class="btn btn-secondary" name ='funding' value='agnostic'>Agnostic</button>
+                </div>
+
+                <div class="form-group text-left">
+                  <label for="exampleInputEmail1">Location</label>
+                  <input type="radio" class="btn btn-secondary" name ='location' value='bay_area'>Bay Area</button>
+                  <input type="radio" class="btn btn-secondary" name ='location' value='boston'>Boston</button>
+                  <input type="radio" class="btn btn-secondary" name ='location' value='new_york'>New York</button>
+                  <input type="radio" class="btn btn-secondary" name ='location' value='seattle'>Seattle</button>
+                  <input type="radio" class="btn btn-secondary" name ='location' value='agnostic'>Agnostic</button>
+                </div>
+                  <button class="btn btn-default btn-lg">Show Me</button>
+              </form>
+            </section>
+{% endblock %}
