@@ -46,10 +46,34 @@ class rec_system:
         self.companies_data = {}
 
         org = 'sequoia-capital'
-        # request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
-        request = requests.get(f"http://62f2328a.ngrok.io/all")
+<<<<<<< Updated upstream
+        request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
+        # request = requests.get(f"http://62f2328a.ngrok.io/all")
+        # request = requests.get(f"0.0.0.0:9999/all")
         j = loads(request.text)
 
+        # for company_entry in j:
+        #     name = company_entry['name']
+        #     num_employees_max = company_entry['num_employees_max']
+        #     num_employees_min = company_entry['num_employees_min']
+        #     contact_email = company_entry['email']
+        #     description = company_entry['description']
+        #     funding_series = company_entry['series']
+        #     money_raised = company_entry['money_raised_usd']
+
+        for company_entry in j['data']['items']:
+            name = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
+            num_employees_max = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max']
+            num_employees_min = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_min']
+            contact_email = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email']
+            description = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['description']
+            funding_series = company_entry['relationships']['funding_round']['properties']['series']
+            money_raised = company_entry['relationships']['funding_round']['properties']['money_raised_usd']
+=======
+        # request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
+        request = requests.get(f"https://62f2328a.ngrok.io/all")
+        j = loads(request.text)
+        
         for company_entry in j:
             name = company_entry['name']
             num_employees_max = company_entry['num_employees_max']
@@ -58,6 +82,7 @@ class rec_system:
             description = company_entry['description']
             funding_series = company_entry['series']
             money_raised = company_entry['money_raised_usd']
+>>>>>>> Stashed changes
 
             self.companies_data[name] = {'num_employees_min': num_employees_min, 'num_employees_max': num_employees_max,'contact_email': contact_email,'description': description,'funding_series': funding_series,'money_raised': money_raised}
 
@@ -112,10 +137,12 @@ class rec_system:
     def rankCompaniesForUser(self):
         company_rankings = []
         for company in self.companies_data:
-            company_rankings.append((company, self.getRankingForCompany(company)))
+            sizeString = "Unknown"
+            if self.companies_data[company]['num_employees_min'] != None and self.companies_data[company]['num_employees_max'] != None:
+                sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])
+
+            company_rankings.append((company, self.getRankingForCompany(company), self.companies_data[company]['contact_email'],sizeString, None, self.companies_data[company]['description']))
         results = sorted(company_rankings, key=lambda x: x[1])
-        print("results")
-        print(results)
         return results
 
 # user_recs = rec_system()

@@ -1,91 +1,204 @@
-ADDRESS  
-11 Beechmont St. 
-Worcester, MA 01609
-
-OBJECTIVE 
-Summer Internship related to Software Engineering 
-
-YANG LIU 
-
-yliu17@wpi.edu 
-508-373-3494 
-
-github.com/byliuyang 
-
-EDUCATION 
-Worcester Polytechnic Institute (WPI), Worcester, MA 
-Bachelor of Science in Computer Science, May 2018 
-           
-RELATED COURSEWORK 
-Intro to Machine Organization & Assembly Language, Algorithms, Software Engineering, Database Systems I, Computer Networks, 
-Operating Systems, Programming Languages, Intro to AI, Webware, Computer Network Security, Computer Graphics 
-
-SKILLS 
-Web Development  
  
- 
+Bachelor of Business Administration • May 2009 
+Kent State University • Kent, Ohio 
+Major: Computer Information Systems 
+Major GPA: 3.70 
 
  
+Cisco 2500/2600 Series Routers; Cisco 1900/2950/3550 Switches; 
+Cisco PIX Model 501; Dell Power Edge Servers; Dell OptiPlex 
+workstations; HP Jet Direct/Network printers; VXL/WYSE Thin 
+Clients 
+ 
+TCP/IP; IPX/SPX; DHCP; DNS; SNMP; RIP; IGRP; EIGRP; OSPF; 
+VPN; 802.11x 
+ 
+Microsoft Windows Server 2000/2003; Microsoft Active Directory; 
+Microsoft Exchange 2003; Citrix Metaframe XP; Novell Netware 5.1; 
+Linux; Cisco IOS 11x/12x 
+ 
+MS-DOS; Microsoft Windows 95/98/ME/NT/2000/XP/CE.Net;  
+MAC OS X 
+ 
+Ethereal; Lotus Notes; McAfee Enterprise Suite 7.1/8i; Microsoft 
+Office (all versions including up to 2003); Norton System Works; 
+Open Office; Remote Desktop; Samba; Shavlik HFNetChk; Sophos 
+Antivirus; Symantec Ghost 7.5/8.0; Veritas Backup Exec 9.1;VM 
+Ware; VNC  
+ 
+HTML; JCL; Oracle iSQL; Visual Basic 6.0  
+ 
+Microsoft Security Guidance Training Clinic; Cisco Internetworking, 
+Advanced Cisco Internetworking, Linux Operating Systems, 
+Windows 2000/2003 Client-Server Networking workshops 
+
+Network Protocols: 
+
+Server Operating Systems: 
+
+Desktop Operating Systems: 
+
+Application Software: 
+
+Programming Skills: 
+Computer-Related Training: 
+
+ 
+RELATED WORK EXPERIENCE: 
+Network Administrator 
+
+89104 Sugarbush Drive  •  Lakewood, Ohio 44117  •  (216)706-3269  •  jeffreya@kent.edu 
+
+Jeffrey A. Beck 
+
+Full time employment in the network or systems support areas of the Information Technology industry. 
+
+ 
+OBJECTIVE: 
+
+ 
+EDUCATION: 
+
+Master of Technology • December 2011 
+Kent State University • Kent, Ohio 
+Emphasis: Computer Technology 
+Cumulative GPA: 4.0 
+
+ 
+COMPUTER SKILLS: 
+
+Hardware Devices: 
+
+Acendex, Inc. • Beachwood, Ohio • January 2012-Present 
+
+(cid:120)  Provided network support and administration to large Cleveland based health care facility 
+(cid:120)  Maintained high availability and stability in a fast-paced Windows 2000/2003 server, desktop, and Citrix 
+
+Metaframe XP environment 
+
+(cid:120)  Coordinated with fellow network engineers and application vendors to upgrade software that enhanced 
+
+Consultant (Self-Employed) 
+
+the overall network infrastructure 
+
+Cleveland/Akron Areas • August 2010-Present 
+
+(cid:120)  Performed PC installs, upgrades, and repairs on hardware and software for customers in the Greater 
+
+Cleveland/Akron areas 
+Installed wired and wireless networks for customers using Linksys and D-Link equipment   
+
+(cid:120) 
+ 
+
+9 
+
+ 
+
+ 
+Jeff Beck, Page Two 
+ 
+
+LAN Systems Specialist (Graduate Assistant) 
+
+Office of the University Registrar, Kent State University • Kent, Ohio • August 2009-December 2011 
+
+(cid:120)  Provided network and desktop support to over 100 users across six departments within division 
+(cid:120)  Supplied hardware and software recommendations to management 
+(cid:120)  Managed several projects that enhanced systems administration and information security policies across 
+
+(cid:120)  Assisted management in the creation and modification of user and computer security policies for  network 
+
+division 
+
+Lab Instructor – Internetworking Workshop 
+
+infrastructure 
+
+College of Continuing Studies, Kent State University • Kent, Ohio • October-November 2010 
+
+(cid:120) 
+
+Instructed 20 graduate and undergraduate students in a hands-on workshop on fundamentals of 
+LAN/WAN internetworking using Cisco routers, switches, and firewalls 
+
+(cid:120)  Taught students basic networking concepts and technologies pursuant to CCNA exam 
+(cid:120)  Assisted laboratory professor in creating lesson plans for each class session 
+
+Student Project Coordinator 
+
+4th Task Force 
+
+Computer Lab Monitor (Intern) 
+
+Libraries and Media Services, Kent State University • Kent, Ohio • January-August 2010 
+
+(cid:120)  Encoded archived personal interviews from audio cassette to mp3 format for Kent State University May 
+
+(cid:120)  Encoded educational videos from VHS to mpeg files and converted to DVD format 
+
+Client Services, Kent State University • Kent, Ohio • August 2008-May 2009 
+
+(cid:120)  Managed user activity in several student computer labs across university campus 
+(cid:120)  Provided training and technical support on software applications to users 
+(cid:120)  Resolved computer hardware and software issues as needed 
+
  
 
  
  
-
-Ruby on Rails, NodeJs, Java Spring, SQL, Restful API Design, Content Negotiation, Entity-relation  
-Diagram, UML, Postgres, Oracle, MySQL, Websocket, Angular 2, React, Responsive Layouts, Regular  
-Expression, AJAX, Reactive Programming, Redux 
-
-Mobile Development 
-
-Push Notification, Customized UI Components, Content Providers, Delegate, Sqlite 
-
-Computer Languages 
-
-JAVA, C, C++, Swift, Objective-C, ES6, Typescript, Ruby, Python, Bash 
-
-Testing   
+SPECIAL PROJECTS: 
 
  
 
-Unit Testing, E2E Testing, Test Driven Development, Behavior Driven Development    
+ 
 
-Computer Science   
+ 
 
-Fundamental Algorithms & Data Structures, Network Security, Operating System Design 
+ 
 
-PROJECTS 
-PopMovies, https://github.com/byliuyang/PopMovies, Android Move App, Java, Personal, Nov 2015-Present 
-Designed and implemented database and unit testings, and implemented HTTP JSON API, local storage, content providers, YouTube 
-preview, responsive layouts 
+ 
 
-Connect N, https://github.com/byliuyang/connect-n-ai, AI Solving Connect-N Game,  Java, Personal, Jan 2016 
-Designed the UML and the heuristics, and implemented min-max algorithm with alpha-beta pruning 
+(cid:120)  Migrated all users and computers in supported offices within Enrollment Management and Student 
+Affairs division from Novell Netware Directory Services to Microsoft Active Directory Services 
+(cid:120)  Standardized procedures for workstation deployments and operating system image management 
+within Office of the University Registrar 
 
-harryHttpd, https://github.com/byliuyang/harryHttpd, Multithreaded Light Weight HTTP Server, C, Personal, Nov 2015 
-Implemented HTTP protocol, file I/O and optimized concurrency 
+(cid:120)  Created inventory tracking database for hardware, software, and network configuration 
 
-netGuard, https://github.com/byliuyang/netGuard, DNS Capacity based Multithread DDOS Guard, Python, Oct 2016 
-Implemented DNS traffic analyzer and IP tables based NAT connection controller 
+information for all devices within supported offices of Enrollment Management and Student 
+Affairs division 
 
-ANN, https://github.com/WPI-CS4341/Artificial-Neural-Networks, An Artificial Neural Network, Python, with one partner, Jan 2016 
-Designed a neural network and implemented back propagation algorithm to classify data points 
+ 
+AWARDS/ACTIVITIES: 
+Nominee • Total Quality Service Award • Enrollment Management/Student Affairs Division • Kent, Ohio 
+ Active Member • Kent State Linux-UNIX Users Group • Kent, Ohio 
 
-Movie Search,  http://cs4241-a6-byliuyang.herokuapp.com/README.md, Movie Info website, Nov 2016 
-Implemented material design and responsive layouts and a ruby on rails like backend framework in Node.js from scratch 
-                           
-EXPERIENCES 
-UI Designer & Front-End developer, Concordya Inc, Beijing, China, May 2015-August 2015 
-Design and implement the new homepage for the company, http://byliuyang.github.io/guanplushomepage  
+• March 2011 
 
-Mobile & Backend developer, ASSISTments Lab, WPI, Worcester, MA, Dec 2016-Present 
-Refactored the iOS App, https://itunes.apple.com/us/app/assistments/id721911528?mt=8, and backend with new interfaces and design 
-patterns, Developed YouTube SDK in Swift and refactored backend 
+• March – December 2010 
+ 
 
-HACKTHONS 
-UI Designer & iOS Developer, team Knockt, http://knockt.com, at HACK@WPI, Best software award for 2017 season 
-Designed the UI and interaction for the web app and mobile, and developed an online iOS app with the notification system. 
+Active Member • Kent State Network Users Group • Kent, Ohio 
 
-UI Designer, Front-end Developer and API Designer, team Code Etch, http://code-etch.herokuapp.com, at HACK@Brown 
-Designed the API with RAML, designed user interaction with sketch and implemented the front-end with Angular 4.0 Beta
+• August 2006 – December 2010 
+ 
+
+Eagle Scout Award • Boy Scouts of America, Greater Cleveland Council • Euclid, Ohio  
+
+• September 2005 
+
+ 
+HOBBIES: 
+
+Chess, rappelling, cycling, golf, running 
+ 
+
+ 
+
+10 
+
+ 
 
 
