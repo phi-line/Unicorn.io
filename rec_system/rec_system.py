@@ -1,7 +1,7 @@
 
 # goal of recommendation system:
 #  1. guage user's technical ability and interests (front end, back end, etc.)
-#  2. get user's company preference for series A or B, location, size
+#  2. get user's company preference for series A or B, size
 #  3. filter list of companies applicable for user's preferences
 #  4. rank remaining companies based on user's technical ability, user's interests, and company viability
 
@@ -18,11 +18,10 @@ with open('keywords.json', 'r') as f:
 
 class rec_system:
     def __init__(self, user_pref_size=55, \
-        user_pref_series='A', user_pref_location='CA', user_profile_keywords={}):
+        user_pref_series='A', user_profile_keywords={}):
 
         # user data
         self.user_pref_series = user_pref_series
-        self.user_pref_location = user_pref_location
         self.user_pref_size = user_pref_size
         self.user_profile_keywords = user_profile_keywords
 
@@ -38,7 +37,6 @@ class rec_system:
 
     #     # test user, replace with user data from resume scrub
     #     self.user_pref_size = 55
-    #     self.user_pref_location = 'CA'
     #     self.user_pref_series = 'C'
     #     self.user_profile_keywords = {'web': 0.09090909090909091, 'software': 0.5454545454545454, 'hardware': 0.18181818181818182, 'security': 0.06060606060606061, 'big data': 0.06060606060606061, 'mobile': 0.06060606060606061}
 
@@ -105,6 +103,8 @@ class rec_system:
         if company_data['num_employees_max'] != None and company_data['num_employees_min'] != None:
             if self.user_pref_size <= company_data['num_employees_max'] and self.user_pref_size >= company_data['num_employees_min']:
                 rank_sum = rank_sum*0.75
+            elif self.user_pref_size < company_data['num_employees_max']*0.5:
+                rank_sum = rank_sum*1.25
 
         # changes rating based on user preference for series
         if company_data['series'] != None:
@@ -121,25 +121,24 @@ class rec_system:
         company_rankings = []
 
         for company in self.companies_data:
-            sizeString = "Unknown"
+            sizeString = "Unknown size"
             if self.companies_data[company]['num_employees_min'] != None and self.companies_data[company]['num_employees_max'] != None:
-                sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])
+                sizeString = str(self.companies_data[company]['num_employees_min'])+" - "+str(self.companies_data[company]['num_employees_max'])+" employees"
+            emailString = "No contact email provided"
+            if self.companies_data[company]['email'] != None:
+                emailString = self.companies_data[company]['email']
 
             if company not in company_names:
                 company_names.append(company)
                 print(self.companies_data[company]['url'])
                 company_rankings.append((company,
                                          self.getRankingForCompany(company),
-                                         self.companies_data[company]['email'],
+                                         emailString,
                                          sizeString,
                                          None,
                                          self.companies_data[company]['short_description'],
                                          self.companies_data[company]['profile_image_url'],
+                                         sizeString,
                                          self.companies_data[company]['url']))
         results = sorted(company_rankings, key=lambda x: x[1])
         return results[:12]
-
-# user_recs = rec_system()
-# user_recs.loadCompaniesData()
-# user_recs.loadUserData(open('test_json.json'))
-# print("TOP 10 RANKINGS: "+str(user_recs.rankCompaniesForUser()[:10]))
