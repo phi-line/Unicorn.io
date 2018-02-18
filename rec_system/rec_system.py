@@ -46,18 +46,28 @@ class rec_system:
         self.companies_data = {}
 
         org = 'sequoia-capital'
-        # request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
-        request = requests.get(f"http://62f2328a.ngrok.io/all")
+        request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
+        # request = requests.get(f"http://62f2328a.ngrok.io/all")
+        # request = requests.get(f"0.0.0.0:9999/all")
         j = loads(request.text)
 
-        for company_entry in j:
-            name = company_entry['name']
-            num_employees_max = company_entry['num_employees_max']
-            num_employees_min = company_entry['num_employees_min']
-            contact_email = company_entry['email']
-            description = company_entry['description']
-            funding_series = company_entry['series']
-            money_raised = company_entry['money_raised_usd']
+        # for company_entry in j:
+        #     name = company_entry['name']
+        #     num_employees_max = company_entry['num_employees_max']
+        #     num_employees_min = company_entry['num_employees_min']
+        #     contact_email = company_entry['email']
+        #     description = company_entry['description']
+        #     funding_series = company_entry['series']
+        #     money_raised = company_entry['money_raised_usd']
+
+        for company_entry in j['data']['items']:
+            name = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
+            num_employees_max = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max']
+            num_employees_min = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_min']
+            contact_email = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email']
+            description = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['description']
+            funding_series = company_entry['relationships']['funding_round']['properties']['series']
+            money_raised = company_entry['relationships']['funding_round']['properties']['money_raised_usd']
 
             self.companies_data[name] = {'num_employees_min': num_employees_min, 'num_employees_max': num_employees_max,'contact_email': contact_email,'description': description,'funding_series': funding_series,'money_raised': money_raised}
 
