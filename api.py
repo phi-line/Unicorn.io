@@ -17,46 +17,12 @@ async def hello():
     return 'Unicorn.io API'
 
 
-@app.route('/list', methods=['GET'])
-def api_list():
-    raw = request.args
-    qp = {k: v.upper() for k, v in raw.items()}
-
-    if 'dept' not in qp:
-        return jsonify(', '.join(db.tables())), 200
-
-    qp_dept = qp['dept']
-    if qp_dept in db.tables():
-        table = db.table(f'{qp_dept}')
-        keys = set().union(*(d.keys() for d in table.all()))
-        return jsonify(', '.join(keys)), 200
-
-    return f"Error! Could not list (this shouldn't happen)", 404
-
-
-@app.route('/get', methods=['GET'])
+@app.route('/all', methods=['GET'])
 def api_dept():
-    raw = request.args
-    qp = {k: v.upper() for k, v in raw.items()}
+    print(list(db.tables()))
+    table = db.table('sequoia-capital')
 
-    qp_dept = qp['dept']
-    if qp_dept in db.tables():
-        table = db.table(f'{qp_dept}')
-        entries = table.all()
-
-        if 'section' not in qp:
-            return jsonify(entries), 200
-
-        qp_section = qp['section']
-
-        try:
-            section = next((e[f'{qp_section}'] for e in entries if f'{qp_section}' in e))
-        except StopIteration:
-            return f'Error! Could not find section: {qp_section}', 404
-        if section:
-            return jsonify(section), 200
-
-    return f'Error! Could not find department: {qp_dept}', 404
+    return jsonify(table.all()), 200
 
 
 if __name__ == "__main__":
