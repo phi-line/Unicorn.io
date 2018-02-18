@@ -1,0 +1,29 @@
+<!-- # Mojia & Harshita
+# final project
+# beta version
+# Dec 19 2017 -->
+
+<!-- this page shows user the feedback after she completes a conversation with the AI -->
+
+{% extends "layout_2.html" %}
+
+{% block content %}
+
+<div class='container' id='survey' >
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2 class="section-heaading text-uppercase">Congrats! You're done!</h2>
+    </div>
+  </div>
+  <br>
+  <h5> Feedback: <em>{{feedback['feedback']}}</em></h5>
+
+  <br>
+  <h5> Here's how you're doing so far: </h5>
+  <ul>
+    <li>Total Time Active: {{data['timeActive']}}</li>
+    <li>Total Points: {{data['points']}}</li>
+  </ul>
+
+</div>
+{% endblock %}
