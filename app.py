@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session
 import os, sys
 from os.path import abspath, dirname
-import parse, rec_system
+import parse as parse
+import rec_system as rec_system
 from werkzeug.utils import secure_filename
 UPLOAD_FOLDER = 'static/files/'
 ALLOWED_EXTENSIONS = set(['pdf'])
@@ -13,7 +14,6 @@ SESSION_TYPE = 'redis' #use RedisSessionInterface
 app.config.from_object(__name__)
 
 
-''' Scott.ai landing page. Has places to sign in or sign up for the service. '''
 @app.route('/', methods =['POST', 'GET'])
 def home():
     if request.method == "POST":
@@ -46,8 +46,8 @@ def start():
                 path = os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename)
                 file.save(path)
 
-                user_resume = parse(file.filename)
-                rs = rec_system()
+                user_resume = parse.parse(file.filename)
+                rs = rec_system.rec_system()
 
 
 
