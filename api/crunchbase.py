@@ -11,6 +11,7 @@ USER_KEY = 'afeba35e3b1a7478009c8d73bbab367a'
 from tinydb import TinyDB
 
 DB_ROOT = 'db/'
+CB_URL = 'https://www.crunchbase.com/'
 ORGS = ['sequoia-capital', 'y-combinator', '500-startups']
 
 def main():
@@ -33,6 +34,7 @@ def main():
         Data = namedtuple('Data', ['name',
                                    'description',
                                    'short_description',
+                                   'url',
                                    'profile_image_url',
                                    'email',
                                    'num_employees_max',
@@ -44,10 +46,12 @@ def main():
         # table = db.table(f"{ORG}")
         while current < total_pages:
             for i in j['data']['items']:
-                name = i['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
+                # name = i['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
+                url = f"{CB_URL}{i['relationships']['funding_round']['relationships']['funded_organization']['properties']['web_path']}"
                 d = Data(i['relationships']['funding_round']['relationships']['funded_organization']['properties']['name'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['description'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['short_description'],
+                         url,
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['profile_image_url'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max'],

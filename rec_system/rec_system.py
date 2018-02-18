@@ -127,13 +127,15 @@ class rec_system:
 
             if company not in company_names:
                 company_names.append(company)
+                print(self.companies_data[company]['url'])
                 company_rankings.append((company,
                                          self.getRankingForCompany(company),
                                          self.companies_data[company]['email'],
                                          sizeString,
                                          None,
                                          self.companies_data[company]['short_description'],
-                                         self.companies_data[company]['profile_image_url']))
+                                         self.companies_data[company]['profile_image_url'],
+                                         self.companies_data[company]['url']))
         results = sorted(company_rankings, key=lambda x: x[1])
         return results[:12]
 
