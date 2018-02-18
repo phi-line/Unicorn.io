@@ -312,7 +312,7 @@ img::-moz-selection {
 
 .size input[type="radio"]:checked + label,
 .Checked + label {
-    background:yellow;
+    background-color:#42DCA3;
 }
 
 .size label {
@@ -322,6 +322,6 @@ img::-moz-selection {
     z-index:90;
 }
 
-.size label:hover {
-     background:#DDD;
+li:hover {
+     background-color:#42DCA3;
 }
