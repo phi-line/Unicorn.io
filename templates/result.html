@@ -22,15 +22,24 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Company</th>
+<<<<<<< HEAD
+            <th scope="col">Contact</th>
+=======
             <th scope="col">Score</th>
+>>>>>>> 6d992251e0fa651dee045897614fbba35527fcf4
             <th scope="col">Feedback</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          {% for i in range(data | length) %}
+          {% for i in range(info|length) %}
           <tr>
             <th scope="row">{{i+1}}</th>
+<<<<<<< HEAD
+            <td>{{info[i][0]}}</td>
+            <td>{{info[i][1]}}</td>
+   
+=======
             <td>{{data[i][0]}}</td>
             <td>
               <!-- insert the audio object here through javascript -->
@@ -49,6 +58,7 @@
                 <button type='submit' class="btn btn-primary" name="delete" value = "delete">Delete</button>
               </form>
             </td>
+>>>>>>> 6d992251e0fa651dee045897614fbba35527fcf4
           </tr>
           {% endfor %}
         </tbody>

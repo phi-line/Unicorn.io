@@ -1,3 +1,205 @@
+<<<<<<< HEAD
+ 
+Bachelor of Business Administration • May 2009 
+Kent State University • Kent, Ohio 
+Major: Computer Information Systems 
+Major GPA: 3.70 
+
+ 
+Cisco 2500/2600 Series Routers; Cisco 1900/2950/3550 Switches; 
+Cisco PIX Model 501; Dell Power Edge Servers; Dell OptiPlex 
+workstations; HP Jet Direct/Network printers; VXL/WYSE Thin 
+Clients 
+ 
+TCP/IP; IPX/SPX; DHCP; DNS; SNMP; RIP; IGRP; EIGRP; OSPF; 
+VPN; 802.11x 
+ 
+Microsoft Windows Server 2000/2003; Microsoft Active Directory; 
+Microsoft Exchange 2003; Citrix Metaframe XP; Novell Netware 5.1; 
+Linux; Cisco IOS 11x/12x 
+ 
+MS-DOS; Microsoft Windows 95/98/ME/NT/2000/XP/CE.Net;  
+MAC OS X 
+ 
+Ethereal; Lotus Notes; McAfee Enterprise Suite 7.1/8i; Microsoft 
+Office (all versions including up to 2003); Norton System Works; 
+Open Office; Remote Desktop; Samba; Shavlik HFNetChk; Sophos 
+Antivirus; Symantec Ghost 7.5/8.0; Veritas Backup Exec 9.1;VM 
+Ware; VNC  
+ 
+HTML; JCL; Oracle iSQL; Visual Basic 6.0  
+ 
+Microsoft Security Guidance Training Clinic; Cisco Internetworking, 
+Advanced Cisco Internetworking, Linux Operating Systems, 
+Windows 2000/2003 Client-Server Networking workshops 
+
+Network Protocols: 
+
+Server Operating Systems: 
+
+Desktop Operating Systems: 
+
+Application Software: 
+
+Programming Skills: 
+Computer-Related Training: 
+
+ 
+RELATED WORK EXPERIENCE: 
+Network Administrator 
+
+89104 Sugarbush Drive  •  Lakewood, Ohio 44117  •  (216)706-3269  •  jeffreya@kent.edu 
+
+Jeffrey A. Beck 
+
+Full time employment in the network or systems support areas of the Information Technology industry. 
+
+ 
+OBJECTIVE: 
+
+ 
+EDUCATION: 
+
+Master of Technology • December 2011 
+Kent State University • Kent, Ohio 
+Emphasis: Computer Technology 
+Cumulative GPA: 4.0 
+
+ 
+COMPUTER SKILLS: 
+
+Hardware Devices: 
+
+Acendex, Inc. • Beachwood, Ohio • January 2012-Present 
+
+(cid:120)  Provided network support and administration to large Cleveland based health care facility 
+(cid:120)  Maintained high availability and stability in a fast-paced Windows 2000/2003 server, desktop, and Citrix 
+
+Metaframe XP environment 
+
+(cid:120)  Coordinated with fellow network engineers and application vendors to upgrade software that enhanced 
+
+Consultant (Self-Employed) 
+
+the overall network infrastructure 
+
+Cleveland/Akron Areas • August 2010-Present 
+
+(cid:120)  Performed PC installs, upgrades, and repairs on hardware and software for customers in the Greater 
+
+Cleveland/Akron areas 
+Installed wired and wireless networks for customers using Linksys and D-Link equipment   
+
+(cid:120) 
+ 
+
+9 
+
+ 
+
+ 
+Jeff Beck, Page Two 
+ 
+
+LAN Systems Specialist (Graduate Assistant) 
+
+Office of the University Registrar, Kent State University • Kent, Ohio • August 2009-December 2011 
+
+(cid:120)  Provided network and desktop support to over 100 users across six departments within division 
+(cid:120)  Supplied hardware and software recommendations to management 
+(cid:120)  Managed several projects that enhanced systems administration and information security policies across 
+
+(cid:120)  Assisted management in the creation and modification of user and computer security policies for  network 
+
+division 
+
+Lab Instructor – Internetworking Workshop 
+
+infrastructure 
+
+College of Continuing Studies, Kent State University • Kent, Ohio • October-November 2010 
+
+(cid:120) 
+
+Instructed 20 graduate and undergraduate students in a hands-on workshop on fundamentals of 
+LAN/WAN internetworking using Cisco routers, switches, and firewalls 
+
+(cid:120)  Taught students basic networking concepts and technologies pursuant to CCNA exam 
+(cid:120)  Assisted laboratory professor in creating lesson plans for each class session 
+
+Student Project Coordinator 
+
+4th Task Force 
+
+Computer Lab Monitor (Intern) 
+
+Libraries and Media Services, Kent State University • Kent, Ohio • January-August 2010 
+
+(cid:120)  Encoded archived personal interviews from audio cassette to mp3 format for Kent State University May 
+
+(cid:120)  Encoded educational videos from VHS to mpeg files and converted to DVD format 
+
+Client Services, Kent State University • Kent, Ohio • August 2008-May 2009 
+
+(cid:120)  Managed user activity in several student computer labs across university campus 
+(cid:120)  Provided training and technical support on software applications to users 
+(cid:120)  Resolved computer hardware and software issues as needed 
+
+ 
+
+ 
+ 
+SPECIAL PROJECTS: 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+(cid:120)  Migrated all users and computers in supported offices within Enrollment Management and Student 
+Affairs division from Novell Netware Directory Services to Microsoft Active Directory Services 
+(cid:120)  Standardized procedures for workstation deployments and operating system image management 
+within Office of the University Registrar 
+
+(cid:120)  Created inventory tracking database for hardware, software, and network configuration 
+
+information for all devices within supported offices of Enrollment Management and Student 
+Affairs division 
+
+ 
+AWARDS/ACTIVITIES: 
+Nominee • Total Quality Service Award • Enrollment Management/Student Affairs Division • Kent, Ohio 
+ Active Member • Kent State Linux-UNIX Users Group • Kent, Ohio 
+
+• March 2011 
+
+• March – December 2010 
+ 
+
+Active Member • Kent State Network Users Group • Kent, Ohio 
+
+• August 2006 – December 2010 
+ 
+
+Eagle Scout Award • Boy Scouts of America, Greater Cleveland Council • Euclid, Ohio  
+
+• September 2005 
+
+ 
+HOBBIES: 
+
+Chess, rappelling, cycling, golf, running 
+ 
+
+ 
+
+10 
+=======
 ADDRESS  
 11 Beechmont St. 
 Worcester, MA 01609
@@ -60,6 +262,7 @@ preview, responsive layouts
 
 Connect N, https://github.com/byliuyang/connect-n-ai, AI Solving Connect-N Game,  Java, Personal, Jan 2016 
 Designed the UML and the heuristics, and implemented min-max algorithm with alpha-beta pruning 
+>>>>>>> 6d992251e0fa651dee045897614fbba35527fcf4
 
 harryHttpd, https://github.com/byliuyang/harryHttpd, Multithreaded Light Weight HTTP Server, C, Personal, Nov 2015 
 Implemented HTTP protocol, file I/O and optimized concurrency 

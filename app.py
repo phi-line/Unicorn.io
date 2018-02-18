@@ -48,18 +48,21 @@ def start():
 
                 user_keywords = parse_resume(path)
                 rs = rec_system(size, funding, location, user_keywords)
+                rs.loadCompaniesData()
+                companyRankings = rs.rankCompaniesForUser()
+                print("company rankings", companyRankings)
 
-
-                return redirect(url_for('result',
-                                        filename=path))
+                return render_template('result.html', info=companyRankings)
+                # redirect(url_for('result', companyInfo=companyRankings))
         else:
             return render_template('start.html')
 
 
 @app.route('/result/', methods =['POST', 'GET'])
-def result():
+def result(companyInfo):
+    print(companyInfo)
     if request.method == "GET":
-        return render_template('result.html')
+        return render_template('result.html', info = ['shit'])
 
 
 if __name__ == '__main__':
