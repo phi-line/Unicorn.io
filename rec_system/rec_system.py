@@ -10,7 +10,6 @@ import math
 import json
 from json import dumps, loads
 import requests
-from rec_system.user_key import USER_KEY
 
 with open('keywords.json', 'r') as f:
   industry_keywords = json.load(f)
@@ -25,43 +24,17 @@ class rec_system:
         self.user_pref_size = user_pref_size
         self.user_profile_keywords = user_profile_keywords
 
-        # company data
         self.companies_data = {}
-
-    # def loadUserData(self, json_data):
-
-    #     # test json parsing code
-    #     json_decode=json.load(json_data)
-    #     # for item in json_decode:
-    #     #     print(item.get('labels').get('en').get('value'))
-
-    #     # test user, replace with user data from resume scrub
-    #     self.user_pref_size = 55
-    #     self.user_pref_series = 'C'
-    #     self.user_profile_keywords = {'web': 0.09090909090909091, 'software': 0.5454545454545454, 'hardware': 0.18181818181818182, 'security': 0.06060606060606061, 'big data': 0.06060606060606061, 'mobile': 0.06060606060606061}
 
     def loadCompaniesData(self):
         self.companies_data = {}
 
-        org = 'sequoia-capital'
-        # request = requests.get(f"https://api.crunchbase.com/v3.1/organizations/{org}/investments?user_key={USER_KEY}")
-        request = requests.get(f"http://62f2328a.ngrok.io/all")
+        request = requests.get(f"http://127.0.0.1:5000/all")
         j = loads(request.text)
 
         for company_entry in j:
             name = company_entry['name']
             self.companies_data[name] = company_entry
-
-        # for company_entry in j['data']['items']:
-        #     name = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
-        #     num_employees_max = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max']
-        #     num_employees_min = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_min']
-        #     contact_email = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email']
-        #     description = company_entry['relationships']['funding_round']['relationships']['funded_organization']['properties']['description']
-        #     funding_series = company_entry['relationships']['funding_round']['properties']['series']
-        #     money_raised = company_entry['relationships']['funding_round']['properties']['money_raised_usd']
-        #
-        #     self.companies_data[name] = {'num_employees_min': num_employees_min, 'num_employees_max': num_employees_max,'contact_email': contact_email,'description': description,'funding_series': funding_series,'money_raised': money_raised}
 
     def getRankingForCompany(self, company_name):
         rank_sum = 0

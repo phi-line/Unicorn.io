@@ -20,9 +20,7 @@ async def hello():
 @app.route('/all', methods=['GET'])
 def api_dept():
     print(list(db.tables()))
-    table = db.table('sequoia-capital')
-
-
+    # table = db.table('sequoia-capital')
     return jsonify(db.all()), 200
 
 

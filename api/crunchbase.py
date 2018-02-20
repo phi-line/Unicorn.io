@@ -21,9 +21,6 @@ def main():
     db = TinyDB(join(DB_ROOT, 'database.json'))
     db.purge_tables()
 
-    # cb = CrunchBase(USER_KEY)
-    # investor = cb.organization('sequoia-capital')
-
     for ORG in ORGS:
         res = requests.get(f'https://api.crunchbase.com/v3.1/organizations/{ORG}/investments?user_key={USER_KEY}')
         j = loads(res.content)# first load of the data
@@ -46,12 +43,10 @@ def main():
         # table = db.table(f"{ORG}")
         while current < total_pages:
             for i in j['data']['items']:
-                # name = i['relationships']['funding_round']['relationships']['funded_organization']['properties']['name']
-                url = f"{CB_URL}{i['relationships']['funding_round']['relationships']['funded_organization']['properties']['web_path']}"
                 d = Data(i['relationships']['funding_round']['relationships']['funded_organization']['properties']['name'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['description'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['short_description'],
-                         url,
+                         f"{CB_URL}{i['relationships']['funding_round']['relationships']['funded_organization']['properties']['web_path']}",
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['profile_image_url'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['contact_email'],
                          i['relationships']['funding_round']['relationships']['funded_organization']['properties']['num_employees_max'],
