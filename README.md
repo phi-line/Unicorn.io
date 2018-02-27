@@ -11,9 +11,9 @@ Upload your resume to unicorn.io, select a couple parameters for companies, then
 next unicorn tailored just for you!
 
 ### Screenshots
-|  **Homepage**  |  **Filters**  |  **Job View**  |
-|:---:|:---:|:---:|
-| ![homepage](https://raw.githubusercontent.com/phi-line/Unicorn.io/master/docs/assets/homepage.png) | ![start](https://raw.githubusercontent.com/phi-line/Unicorn.io/master/docs/assets/start.png) | ![result](https://github.com/phi-line/Unicorn.io/blob/master/docs/assets/result.png?raw=true)|
+|  **Homepage** |  **Job View**  |
+|:---:|:---:|
+| ![homepage](https://raw.githubusercontent.com/phi-line/Unicorn.io/master/docs/assets/homepage.png) | ![result](https://github.com/phi-line/Unicorn.io/blob/master/docs/assets/result.png?raw=true)|
 
 ## Setup
 
