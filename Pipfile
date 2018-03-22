@@ -13,6 +13,8 @@ tinydb = "*"
 quart = "*"
 flask = "*"
 "pdfminer.six" = "*"
+gunicorn = "*"
+
 
 [dev-packages]
 
