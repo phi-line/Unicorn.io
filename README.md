@@ -11,26 +11,36 @@ Upload your resume to unicorn.io, select a couple parameters for companies, then
 next unicorn tailored just for you!
 
 ### Screenshots
+|  **Homepage** |  **Job View**  |
+|:---:|:---:|
+| ![homepage](https://raw.githubusercontent.com/phi-line/Unicorn.io/master/docs/assets/homepage.png) | ![result](https://github.com/phi-line/Unicorn.io/blob/master/docs/assets/result.png?raw=true)|
 
-### Teammates
-* Magnus Johnson (MIT)
-* Kishan (Foothill College)
-* Anqi Lu (Worcester Polytechnic Institute)
-* Mojia Shen (Wellesley College)
+## Setup
 
 ### Python Version
 We are using Python 3.6.
 
 ### Running the app in pipenv
-* `pip3 install pipenv`
-* `pipenv install`
-* `pipenv shell`
+> `pip3 install pipenv`
+
+> `pipenv install`
+
+> `pipenv shell`
 
 ### Starting the api in pipenv
-`cd api`
-Replace the user_key with yours then run the next lines
-`python(3) crunchbase`
-`python(3) api.py`
+> `cd api`
+
+Replace the user_key with yours then run:
+
+> `python(3) crunchbase`
+
+> `python(3) api.py`
 
 ### Starting the Website in pipenv
-`python(3) app.py`
+> `python(3) app.py`
+
+## Credits
+* Magnus Johnson (MIT)
+* Kishan (Foothill College)
+* Anqi Lu (Worcester Polytechnic Institute)
+* Mojia Shen (Wellesley College)
