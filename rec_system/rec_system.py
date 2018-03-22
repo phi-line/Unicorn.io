@@ -9,7 +9,11 @@ import re
 import math
 import json
 from json import dumps, loads
-import requests
+
+from os.path import join
+from tinydb import TinyDB, Query
+DB_ROOT = 'db/'
+db = TinyDB(join(DB_ROOT, 'database.json'))
 
 with open('keywords.json', 'r') as f:
   industry_keywords = json.load(f)
@@ -29,10 +33,7 @@ class rec_system:
     def loadCompaniesData(self):
         self.companies_data = {}
 
-        request = requests.get(f"http://127.0.0.1:5000/all")
-        j = loads(request.text)
-
-        for company_entry in j:
+        for company_entry in db.all():
             name = company_entry['name']
             self.companies_data[name] = company_entry
 

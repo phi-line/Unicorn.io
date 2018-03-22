@@ -1,4 +1,5 @@
 .idea/
 db/
+static/files/*
 __pycache__
 *.DS_Store

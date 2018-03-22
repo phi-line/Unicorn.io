@@ -65,7 +65,4 @@ def result(companyInfo):
 
 
 if __name__ == '__main__':
-  port = 9999
-  app.debug = True
-  print('Running on port ' + str(port))
-  app.run('0.0.0.0',port)
+  app.run('0.0.0.0', 9999, debug=True, use_reloader=False)
