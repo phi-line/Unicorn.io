@@ -3,3 +3,4 @@ db/
 static/files/*
 __pycache__
 *.DS_Store
+parse_pdf/outputtext.txt
