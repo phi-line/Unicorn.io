@@ -7,14 +7,14 @@ from werkzeug.utils import secure_filename
 UPLOAD_FOLDER = 'static/files/'
 ALLOWED_EXTENSIONS = set(['pdf'])
 
-app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static/files'
-app.secret_key = 'youcantguessthisout'
+application = Flask(__name__)
+application.config['UPLOAD_FOLDER'] = 'static/files'
+application.secret_key = 'youcantguessthisout'
 SESSION_TYPE = 'redis' #use RedisSessionInterface
-app.config.from_object(__name__)
+application.config.from_object(__name__)
 
 
-@app.route('/', methods =['POST', 'GET'])
+@application.route('/', methods =['POST', 'GET'])
 def home():
     if request.method == "POST":
         return redirect(url_for('start'))
@@ -24,7 +24,7 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/start/', methods =['POST', 'GET'])
+@application.route('/start/', methods =['POST', 'GET'])
 def start():
         if request.method == 'POST':
             size = int(request.form['size'])
@@ -43,7 +43,7 @@ def start():
             if file and allowed_file(file.filename):
                 basedir = abspath(dirname(__file__))
                 filepath = secure_filename(file.filename)
-                path = os.path.join(basedir, app.config['UPLOAD_FOLDER'], filepath)
+                path = os.path.join(basedir, application.config['UPLOAD_FOLDER'], filepath)
                 file.save(path)
 
                 user_keywords = parse_resume(path)
@@ -57,7 +57,7 @@ def start():
             return render_template('start.html')
 
 
-@app.route('/result/', methods =['POST', 'GET'])
+@application.route('/result/', methods =['POST', 'GET'])
 def result(companyInfo):
     print(companyInfo)
     if request.method == "GET":
@@ -65,4 +65,4 @@ def result(companyInfo):
 
 
 if __name__ == '__main__':
-  app.run('0.0.0.0', 9999, debug=True, use_reloader=False)
+  application.run('0.0.0.0', 9999, debug=True, use_reloader=False)
